@@ -1,0 +1,96 @@
+ion-item-option
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2
+{
+  font-weight: 600;
+  margin: 4px;
+}
+
+p
+{
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+ion-content
+{
+  --padding-start: 5px;
+  --padding-end: 5px;
+}
+
+ion-item
+{
+  overflow: visible;
+}
+
+.CompletedChip
+{
+  --backgroud: #e0f2ff;
+  --color: #4caf50;
+  font-weight: 500;
+}
+
+.CancelChip
+{
+  --backgroud: #e0f2ff;
+  --color: #f44336;
+  font-weight: 500;
+}
+
+.PendingChip
+{
+  --backgroud: #e0f2ff;
+  --color: #ffc107;
+  font-weight: 500;
+}
+
+.welcome-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 32px;
+}
+
+.icon-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(var(--ion-color-primary-rgb), 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.icon-circle ion-icon {
+  font-size: 48px;
+  color: var(--ion-color-primary);
+}
+
+.welcome-wrapper h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.welcome-wrapper p {
+  font-size: 16px;
+  opacity: 0.75;
+  max-width: 320px;
+}
+
+.hint {
+  margin-top: 24px;
+  font-size: 13px;
+  opacity: 0.5;
+}
+

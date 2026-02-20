@@ -1,0 +1,41 @@
+.summary-card
+{
+  margin: 16px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card ion-card-title
+{
+  font-weight: 600;
+}
+
+.summary-card p
+{
+  margin: 0;
+  color: #666;
+}
+
+h2
+{
+  font-weight: 600;
+  margin: 4px;
+}
+
+p
+{
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+ion-content
+{
+  --padding-start: 5px;
+  --padding-end: 5px;
+}
+
+ion-item
+{
+  overflow: auto;
+}

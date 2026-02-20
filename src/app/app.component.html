@@ -1,3 +1,76 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="menu-title">
+          <ion-icon name="menu"></ion-icon>
+          <span>Panel</span>
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item
+            routerLink="/home"
+            routerLinkActive="selected"
+            lines="none">
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+            <ion-label>Inicio</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item
+            routerLink="/orders"
+            routerLinkActive="selected"
+            lines="none">
+            <ion-icon name="time-outline" slot="start"></ion-icon>
+            <ion-label>Ordenes pendientes</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item
+            routerLink="/shipments-details"
+            routerLinkActive="selected"
+            lines="none">
+            <ion-icon name="car-outline" slot="start"></ion-icon>
+            <ion-label>Ordenes de entrega</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item
+            routerLink="/payslip"
+            routerLinkActive="selected"
+            lines="none">
+            <ion-icon name="cash-outline" slot="start"></ion-icon>
+            <ion-label>Pagos</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item
+            routerLink="/edit-user"
+            routerLinkActive="selected"
+            lines="none">
+            <ion-icon name="construct-outline" slot="start"></ion-icon>
+            <ion-label>Configuracion</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-menu-toggle auto-hide="false">
+        <ion-item
+          lines="none"
+          (click)="Logout()">
+          <ion-icon color="danger" name="log-out-outline" slot="start"></ion-icon>
+          <ion-label color="danger">Cerrar sesion</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-footer>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

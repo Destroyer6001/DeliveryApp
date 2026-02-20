@@ -1,0 +1,34 @@
+.page-center
+{
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.formInput
+{
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+.form-container
+{
+  width: 100%;
+  max-width: 520px;
+  padding: 32px;
+  gap: 20px;
+  background: var(--ion-color-light);
+  border-radius: 16px;
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.2),
+    0 6px 15px rgba(0, 0, 0, 0.14);
+}
+
+.actions
+{
+  justify-content: space-between;
+  margin-bottom: 24px;
+}

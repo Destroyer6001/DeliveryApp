@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ordenes De Entrega</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if(listShipments.length > 0)
+  {
+    <ion-list>
+      @for(c of listShipments; track c.id)
+      {
+        <ion-item-sliding #sliding>
+          <ion-item>
+            <ion-label>
+              <h2>Orden #{{c.id}}</h2>
+              <p>Fecha De Creacion: {{c.date | date: 'dd/MM/yyyy'}}</p>
+              <p>Fecha De Entrega: {{c.deliveryDate ? (c.deliveryDate | date: 'dd/MM/yyyy') : ''}}</p>
+              <p>
+                @if(c.state === 'COMPLETED')
+                {
+                  <ion-chip class="CompletedChip">
+                    <ion-label>Completado</ion-label>
+                  </ion-chip>
+                }
+                @if(c.state === 'PENDING')
+                {
+                  <ion-chip class="PendingChip">
+                    <ion-label>Pendiente</ion-label>
+                  </ion-chip>
+                }
+                @if(c.state === 'CANCEL')
+                {
+                  <ion-chip class="CancelChip">
+                    <ion-label>Cancelado</ion-label>
+                  </ion-chip>
+                }
+              </p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item-options side="end">
+            @if(c.state === 'PENDING')
+            {
+              <ion-item-option
+                color="primary"
+                (click)="ConfirmShipment(c.id, sliding)">
+                <ion-icon name="checkmark-outline"></ion-icon>
+              </ion-item-option>
+
+              <ion-item-option
+                color="danger"
+                (click)="ConfirmShipmentCancel(c.id, sliding)">
+                <ion-icon name="close-outline"></ion-icon>
+              </ion-item-option>
+            }
+          </ion-item-options>
+        </ion-item-sliding>
+      }
+    </ion-list>
+  }
+  @else
+  {
+    <div class="welcome-wrapper">
+
+      <div class="icon-circle">
+        <ion-icon name="car-outline"></ion-icon>
+      </div>
+
+      <h1>Sin pedidos de entrega</h1>
+      <p>
+        Todavía no has generado ningún pedido de entrega.
+      </p>
+      <span class="hint">
+        Ve a <strong>Órdenes pendientes</strong> y crea tu primera orden en segundos.
+      </span>
+
+    </div>
+  }
+</ion-content>

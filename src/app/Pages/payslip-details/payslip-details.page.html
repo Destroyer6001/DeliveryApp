@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="GoBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Detalle Pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card class="summary-card">
+    <ion-card-header>Pago #{{payslip?.id}}</ion-card-header>
+    <ion-card-content>
+      <p>Total: {{payslip?.total | number: '1.2-2'}}</p>
+      <p>Fecha De Liquidacion: {{payslip?.paymentDate | date: 'dd/MM/yyyy'}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    @for (c of payslip?.payments; track c.id)
+    {
+      <ion-item>
+        <ion-label>
+          <h2>Colilla #{{c.id}}</h2>
+          <p>Total a pagar: {{c.payValue | number: '1.2-2'}}</p>
+          <p>Fecha de creacion: {{c.payDay | date: 'dd/MM/yyyy'}}</p>
+        </ion-label>
+      </ion-item>
+    }
+  </ion-list>
+</ion-content>
+
